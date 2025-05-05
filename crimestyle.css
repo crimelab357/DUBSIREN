@@ -1,0 +1,250 @@
+:root {
+  --primary: #4a6bff;
+  --primary-light: rgba(74, 107, 255, 0.7);
+  --accent: #00ffc8;
+  --text: #f0f4ff;
+  --background: #121826;
+  --card-bg: rgba(18, 24, 38, 0.85);
+  --border: rgba(74, 107, 255, 0.3);
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  background: linear-gradient(rgba(18, 24, 38, 0.9), rgba(18, 24, 38, 0.9)), 
+              url(img/crime.jpg) no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  color: var(--text);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+h1 {
+  margin: 0;
+  padding: 1rem 2rem;
+  font-size: 2.25rem;
+  font-weight: 600;
+  border-left: 4px solid var(--primary);
+  line-height: 1.2;
+  background: var(--card-bg);
+  text-align: left;
+  letter-spacing: -0.5px;
+}
+
+.container {
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+button.big-button {
+  margin-top: 1.5rem;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background-color: var(--card-bg);
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button.big-button:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+button.big-button:active {
+  transform: translateY(0);
+}
+
+#tapTempoButton {
+  margin-top: 0;
+}
+
+.param-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.param-group {
+  flex: 1 1 300px;
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
+}
+
+.param-group h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: -1rem -1rem 1rem -1rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: white;
+  border-radius: 6px 6px 0 0;
+}
+
+.param-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(240, 244, 255, 0.8);
+}
+
+.param-group input[type="range"] {
+  width: 100%;
+  margin: 0.5rem 0 1rem;
+  accent-color: var(--primary);
+}
+
+.param-group canvas {
+  margin-top: 1rem;
+  border-radius: 4px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  width: 100%;
+}
+
+/* Horizontal Patches Layout */
+.patch-selection p {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.patch-selection label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Horizontal Delay Factors Layout */
+.delayFactorContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.delayFactorLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0 !important;
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+  color: rgba(240, 244, 255, 0.7);
+}
+
+footer p.credit {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+footer p.credit img {
+  height: 30px;
+  position: static;
+}
+
+#tapTempoValue,
+#tapTempoUnit {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.25rem;
+  color: var(--accent);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .param-group {
+    flex: 1 1 100%;
+  }
+  
+  .patch-selection p {
+    gap: 0.5rem;
+  }
+  
+  .delayFactorContainer {
+    gap: 0.25rem;
+  }
+  
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  footer p.credit {
+    justify-content: center;
+  }
+  /* Add rounded corners to buttons */
+.rounded-button {
+    border-radius: 30px !important; /* More pronounced rounded corners */
+}
+
+/* Existing button styles with rounded corners */
+button.big-button {
+    border-radius: 30px;
+    /* Keep all your existing button styles */
+    transition: all 0.3s ease;
+}
+
+button.big-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button.big-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Make sure the new button matches existing style */
+#crimelabButton {
+    margin-left: 1rem; /* Space between buttons */
+}
+}

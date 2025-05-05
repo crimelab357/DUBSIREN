@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+  
+<!-- Mirrored from siren.zongosound.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 03 May 2025 01:19:55 GMT -->
+<head>
+    <meta charset="utf-8">
+    <title>CRIMELAB357 </title>
+    <link rel="stylesheet" href="crimestyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="img/logo.jpg" type="image/jpeg">
+  </head>
+  <body>
+    <div class="container">
+      <h1>CRIMELAB357 DubSiren</h1> <div class="clear">
+        <button id="playButton" class="big-button">Play</button><button id="crimelabButton" class="big-button rounded-button">CRIMELAB357</button>
+            <audio id="crimelabAudio" src="crimelab357.mp3" preload="auto"></audio>
+       <label>Volume<input class="volume" min="0" max="1" step="0.01" value="0.8" type="range"></label>
+		 <div class="param-group">
+          
+           
+          <canvas id="canvas" width="420" height="6"></canvas>
+          
+        </div>
+      </div>
+      <div class="param-container">
+        <div class="param-group patch-selection">
+          <h2>Patches</h2>
+          <p>
+              <label>
+                <input type="radio" name="patch" value="1">1
+              </label>
+              <label>
+                <input type="radio" name="patch" value="2">2
+              </label>
+              <label>
+                <input type="radio" name="patch" value="3">3
+              </label>
+          
+              <label>
+                <input type="radio" name="patch" value="4">4
+              </label>
+              <label>
+                <input type="radio" name="patch" value="5">5
+              </label>
+              <label>
+                <input type="radio" name="patch" value="6">6
+              </label>
+          </p>
+          <p>
+              <label>
+                <input type="radio" name="patch" value="7">7
+              </label>
+              <label>
+                <input type="radio" name="patch" value="8">8
+              </label>
+              <label>
+                <input type="radio" name="patch" value="9">9
+              </label>
+			  <label>
+                <input type="radio" name="patch" value="10">10
+              </label>
+			  <label>
+                <input type="radio" name="patch" value="11">11
+              </label>
+			  <label>
+                <input type="radio" name="patch" value="12">12
+              </label>
+          </p>
+        </div>
+        <div class="param-group">
+          <h2>Carrier</h2>
+          <label>Frequency<input class="mainFrequency" max="1000" min="20" step="1" value="400" type="range"></label>
+          <p>
+          <label>
+            <input type="radio" name="mainOscillatorType" class="mainOscillatorType" value="sine">Sine
+          </label>
+          <label>
+            <input type="radio" name="mainOscillatorType" class="mainOscillatorType" value="square" checked="checked">Square
+          </label>
+          <label>
+            <input type="radio" name="mainOscillatorType" class="mainOscillatorType" value="triangle">Triangle
+          </label>
+          <label>
+            <input type="radio" name="mainOscillatorType" class="mainOscillatorType" value="sawtooth">Sawtooth
+          </label>
+        </div>
+        <div class="param-group">
+          <h2>Low-Frequency Oscillator</h2>
+          <p>
+            <label>Frequency<input class="modulationFrequency" min="0.1" max="12" step="0.1" value="1" type="range"><span class="valueDisplay"></label>
+            <label>Amplitude<input class="modulationAmplitude" min="1" max="500" step="1" value="200" type="range"><span class="valueDisplay"></label>
+          <p>
+          <label>
+            <input type="radio" name="modulationOscillatorType" class="modulationOscillatorType" value="sine" checked="checked">Sine
+          </label>
+          <label>
+            <input type="radio" name="modulationOscillatorType" class="modulationOscillatorType" value="square">Square
+          </label>
+          <label>
+            <input type="radio" name="modulationOscillatorType" class="modulationOscillatorType" value="triangle">Triangle
+          </label>
+          <label>
+            <input type="radio" name="modulationOscillatorType" class="modulationOscillatorType" value="sawtooth">Sawtooth
+          </label>
+         
+        </div>
+        <div class="param-group">
+          <h2>Delay</h2>
+          <p>
+            <label>Delay<input class="delayTime" min="0.1" max="1" step="0.01" value="0.5" type="range"></label>
+          </p>
+          <p class="delayFactorContainer">
+            <label>Factor</label>
+            <label class="delayFactorLabel"><input type="radio" class="delayFactor" name="delayFactor" value="0.25">¼</label>
+            <label class="delayFactorLabel"><input type="radio" class="delayFactor" name="delayFactor" value="0.5">½</label>
+            <label class="delayFactorLabel"><input type="radio" class="delayFactor" name="delayFactor" value="0.75">¾</label>
+            <label class="delayFactorLabel"><input type="radio" class="delayFactor" name="delayFactor" checked="checked" value="1">1</label>
+            <label class="delayFactorLabel"><input type="radio" class="delayFactor" name="delayFactor" value="1.5">³⁄₂</label>
+            <label class="delayFactorLabel"><input type="radio" class="delayFactor" name="delayFactor" value="2">2</label>
+          </p>
+          <p>
+            <label>Feedback<input class="delayFeedback" min="0" max="1" step="0.01" value="0.4" type="range"></label>
+            <label>Cutoff frequency<input class="delayCutoffFrequency" min="1000" max="10000" step="10" value="2000" type="range"></label>
+          </p>
+          
+        </div>
+       
+       
+      </div>
+      
+     
+      
+      
+    </div>
+    <script src="crimelab357.js"></script>
+	 <script>
+        // Add this script to handle the new button
+        document.getElementById('crimelabButton').addEventListener('click', function() {
+            const audio = document.getElementById('crimelabAudio');
+            audio.currentTime = 0; // Rewind to start if already playing
+            audio.play();
+        });
+    </script>
+  </body>
+
+
+</html>
